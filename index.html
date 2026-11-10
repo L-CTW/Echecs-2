@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0a0612" />
+    <title>Échecs — Cathédrale Gothique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game"></canvas>
+      <div id="hud" aria-live="polite">
+        <header class="hud-top">
+          <h1>Cathédrale des Échecs</h1>
+          <p id="turn-label">Tour : Blanc</p>
+        </header>
+        <div id="status" class="status"></div>
+        <div class="hud-controls">
+          <div class="camera-group" role="group" aria-label="Vue caméra">
+            <button type="button" data-camera="dramatic" class="active">Dramatique</button>
+            <button type="button" data-camera="player">Joueur</button>
+            <button type="button" data-camera="gallery">Galerie</button>
+            <button type="button" data-camera="bishop">Évêché</button>
+          </div>
+          <div class="action-group">
+            <button type="button" id="btn-new">Nouvelle partie</button>
+            <button type="button" id="btn-undo" disabled>Annuler</button>
+          </div>
+        </div>
+        <p class="hint">Touchez une pièce, puis une case valide. Vous jouez les Blancs.</p>
+      </div>
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlay-title"></h2>
+          <p id="overlay-text"></p>
+          <button type="button" id="overlay-close">Continuer</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
